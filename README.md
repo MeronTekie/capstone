@@ -9,6 +9,6 @@
 - List the stretch goals
 - List the technologies that will be applied on the application on the stretch goals
 
-### 2:30PM | Structure the work-flow diagram of the app
+### 2:30-4:45PM | Structure the work-flow diagram of the app
 
- <img src ="/flow-chart.png" width="100%" height="400">
+ <img src ="/flowChart.png" width="100%" height="400">
