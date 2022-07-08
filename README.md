@@ -5,5 +5,5 @@
  - List the technologies that will be applied to the application 
  - List the stretch goals 
  - List the technologies that will be applied on the application on the stretch goals
-
+### 2:30PM  | Structure the work-flow diagram of the app
  
