@@ -22,3 +22,7 @@
   - Make it calculate your calories based on your motion instead of manually putting the value.
   - As a stretch goal there is a plan to make it a mobile app.
   - Deploy it so it can be available to anyone download it and use it.
+  ## What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
+  - REACT NATIVE
+  - AWS/AZURE
+  - WIKIPEDIA AND GOOGLE for the TIPS information.
