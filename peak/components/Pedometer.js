@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ImageBackground, Button } from "react-native";
 import { Pedometer } from "expo-sensors";
@@ -7,18 +7,22 @@ function PedometerTracker() {
 	const [availability, setAvailability] = useState("");
 	const [stepsNumber, setStepsNumber] = useState(0);
 
-	Pedometer.isAvailableAsync().then(
-		(result) => {
-			setAvailability(String(result));
-		},
-		(error) => {
-			setAvailability(error);
-		}
-	);
+	useEffect(() => {
+		subscribe();
+	}, []);
+
 	subscribe = () => {
 		const subscription = Pedometer.watchStepCount((result) => {
 			setStepsNumber(result.steps);
 		});
+		Pedometer.isAvailableAsync().then(
+			(result) => {
+				setAvailability(String(result));
+			},
+			(error) => {
+				setAvailability(error);
+			}
+		);
 	};
 	return (
 		<View style={styles.container}>
@@ -30,9 +34,8 @@ function PedometerTracker() {
 				<View style={styles.navbar}>
 					<Text style={styles.status}> Pedometer:{availability}</Text>
 				</View>
-				<View style={styles.navbar}>
-					<Text> Number of Steps: {stepsNumber}</Text>
-				</View>
+
+				<Text> Number of Steps: {stepsNumber}</Text>
 			</ImageBackground>
 		</View>
 	);
