@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ImageBackground, Button } from "react-native";
 import React ,{useState} from "react";
-import PedometerTracker from "./components/Pedometer";
+import PedometerTracker from "./screens/Pedometer";
 
 
 
