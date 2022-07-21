@@ -3,14 +3,13 @@ const healthInfo = [
 		id: 1,
 		title: "Cardio",
 		image: "",
-		descripion: "",
-		source: "",
+		descripion: ''
 	},
 	{
 		id: 2,
 		title: "Abs",
 		image: "",
-		descripion: "",
+		descripion: ['Ab Crunch Machine','Ab Crunch Ball','Abdominal Twist','Bar crunch','Bicycle kick','Burpees','cable Crunch','Clam','Crunch Twist','Plank','Russian '],
 		source: "",
 	},
 	{
