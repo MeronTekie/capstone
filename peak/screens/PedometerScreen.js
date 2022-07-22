@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
   },
   homeBody:{
-    fontSize:25,
+    fontSize:80,
     fontWeight:'bold',
   }
 
