@@ -4,7 +4,6 @@ export default function Profile({ navigation }) {
 	return (
 		<View style={styles.homeContainer}>
 			<Text style={styles.homeBody} onPress={() => alert("Hi There!")}>
-				{" "}
 			Profile
 			</Text>
 		</View>

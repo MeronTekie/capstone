@@ -1,4 +1,5 @@
-const healthInfo = [
+import React from "react";
+const HealthInfo = [
 	{
 		id: 2,
 		title: "Abs",
@@ -44,3 +45,4 @@ const healthInfo = [
     description:['Jogging','Treadmill','Tennis','Rowing','Swimming','Jump Rope','Cycling','Kick Boxing','Elliptical','Step Machine',]
   }
 ];
+export default HealthInfo
