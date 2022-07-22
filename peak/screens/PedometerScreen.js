@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View,Text,StyleSheet } from 'react-native';
-export default function Home({navigation}){
+export default function PedometerScreen({navigation}){
   return(
     <View style={styles.homeContainer}>
       <Text style={styles.homeBody} onPress={()=>alert('Hi There!')}> Home</Text>

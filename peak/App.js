@@ -1,20 +1,24 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, ImageBackground, Button } from "react-native";
-import React ,{useState} from "react";
-import PedometerTracker from "./navigation/screens/Pedometer";
+import React from "react";
+import {  StyleSheet, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import MainContainer from "./navigation/MainContainer";
+import PedometerTracker from "./navigation/Pedometer";
 
 
-
-export default function App() {
- 
+function App() {
 	return (
-		<View style={styles.containers}>
-      <PedometerTracker/>
-		</View>
+			// <View style={styles.containers}>
+			// 	  <PedometerTracker/>
+			// </View>
+		<NavigationContainer>
+			<MainContainer/>
+		</NavigationContainer>	
+			
 	);
 }
 const styles = StyleSheet.create({
-  containers:{
-    flex:1
-  }
-})
+	containers: {
+		flex: 1,
+	},
+});
+export default App;

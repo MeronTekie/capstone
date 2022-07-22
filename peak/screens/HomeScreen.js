@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View,Text,StyleSheet } from 'react-native';
-export default function InfoCenter({navigation}){
+export default function Home({navigation}){
   return(
     <View style={styles.homeContainer}>
       <Text style={styles.homeBody} onPress={()=>navigation.navigate('Home')}> Home</Text>
@@ -17,5 +17,4 @@ const styles = StyleSheet.create({
     fontSize:25,
     fontWeight:'bold',
   }
-
 })
