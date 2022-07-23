@@ -45,25 +45,25 @@ function PedometerTracker() {
 			<ImageBackground
 				style={{ flex: 1 }}
 				resizeMode="stretch"
-				source={require("../assets/pedometer-cover.jpeg")}
+				source={require("../assets/hiking.jpeg")}
 			>
-				<View style={{ alignItems: "center", marginTop: 60 }}>
+				<View style={{ alignItems: "center", marginTop: 35 }}>
 					<CircularProgress
 						value={stepsNumber}
 						maxValue={300}
-						radius={140}
+						radius={150}
 						inActiveStrokeColor={"black"}
 						activeStrokeColor={"yellow"}
 						inActiveStrokeOpacity={0.7}
-						inActiveStrokeWidth={40}
-						activeStrokeWidth={40}
+						inActiveStrokeWidth={30}
+						activeStrokeWidth={30}
 						title={"Steps"}
-						titleStyle={{ fontSize: 45, color: "white", fontWeight: "bold" }}
+						titleStyle={{ fontSize: 25, color: "black", fontWeight: "bold" }}
 					/>
 				</View>
 
-				<View style={{ alignItems: "center", marginTop: 40 }}>
-					<Text style={{ fontSize: 40 }}>
+				<View style={{ marginTop: 80 }}>
+					<Text style={styles.indicators}>
 						Distance Covered: {ditanceCovered}
 					</Text>
 					<Progress.Bar
@@ -75,8 +75,8 @@ function PedometerTracker() {
 						indeterminateAnimationDuration={2000}
 					/>
 				</View>
-				<View style={{ alignItems: "center", marginTop: 10 }}>
-					<Text style={{ fontSize: 40 }}>
+				<View style={{marginTop: 10 }}>
+					<Text style={styles.indicators}>
 						Distance Covered: {ditanceCovered}
 					</Text>
 					<Progress.Bar
@@ -88,8 +88,8 @@ function PedometerTracker() {
 						indeterminateAnimationDuration={2000}
 					/>
 				</View>
-				<View style={{ alignItems: "center", marginTop: 10 }}>
-					<Text style={{ fontSize: 40, color: "white" }}>
+				<View style={{  marginTop: 10 }}>
+					<Text style={styles.indicators}>
 						Distance Covered: {ditanceCovered}
 					</Text>
 					<Progress.Bar
@@ -107,7 +107,7 @@ function PedometerTracker() {
 }
 const styles = StyleSheet.create({
 	container: {
-		flex: 1
+		flex: 1,
 	},
 	status: {
 		marginTop: 500,
@@ -133,6 +133,18 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		marginLeft: 10,
 	},
+	indicators:{
+		fontSize: 25, 
+		color: "white",
+		marginTop: 5,
+		marginBottom:5,
+		borderBottomEndRadius:25,
+		alignContent:'flex-start',
+		borderRadius:45,
+		marginRight:80,
+		marginLeft:10,
+		fontWeight:'bold'
+	}
 });
 
 export default PedometerTracker;

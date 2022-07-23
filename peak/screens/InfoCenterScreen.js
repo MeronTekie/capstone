@@ -4,15 +4,11 @@ import HealthInfo from "../assets/Data";
 export default function InfoCenterScreen({ navigation }) {
 	return (
 		<View style={{flex:1}}>
-		
-				{HealthInfo.map((item,index) => (
-          <FlatList style={styles.list} onPress={()=>alert("Hello")}>
-          
-              <Text style={styles.header} key={index}>{item.title}</Text>
-						
-					</FlatList>
-				))}
-		
+      {HealthInfo.map((item,index) => (
+        <FlatList style={styles.list} onPress={()=>alert("Hello")}>
+            <Text style={styles.header} key={index}>{item.title}</Text>
+        </FlatList>
+      ))}
 		</View>
 	);
 }

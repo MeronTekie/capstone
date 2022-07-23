@@ -27,8 +27,9 @@ export default function MainContainer() {
 				headerStyle: {
 					backgroundColor: "purple",
 					opacity: 0.9,
+					
 				},
-				headerStatusBarHeight: 70,
+				headerStatusBarHeight: 35,
 				tabBarActiveTintColor: "purple",
 			}}
 		>

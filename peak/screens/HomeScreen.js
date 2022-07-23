@@ -3,11 +3,9 @@ import { View, Text, StyleSheet, ImageBackground,Image} from "react-native";
 export default function Home({ navigation }) {
 	return (
 		<View style={styles.homeContainer}>
-			{/* <Text style={styles.homeBody} onPress={()=>navigation.navigate('Home')}> Home</Text> */}
 			<Image
-				style={{ flex: 1,alignItems:'ceter' }}
+				style={{ marginTop:30,marginLeft:120}}
 				resizeMode="contain"
-        
 				source={require("../assets/logo_size_invert.jpg")}
 			></Image>
 		</View>
@@ -16,8 +14,8 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
 	homeContainer: {
 		flex: 1,
-		alignItems:'center',
-		justifyContent:'center',
+		// alignItems:'center',
+		// justifyContent:'center',
     backgroundColor:'white'
 	},
 	homeBody: {
