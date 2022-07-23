@@ -107,10 +107,7 @@ function PedometerTracker() {
 }
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
-		// backgroundColor: '#fff',
-		// alignItems: 'center',
-		// justifyContent: 'center',
+		flex: 1
 	},
 	status: {
 		marginTop: 500,
@@ -118,7 +115,7 @@ const styles = StyleSheet.create({
 		color: "white",
 		fontSize: 30,
 		alignItems: "center",
-		// backgroundColor: "rgba(15,189,182,0.4)",
+		backgroundColor: "rgba(15,189,182,0.4)",
 		width: 400,
 		textAlign: "center",
 		fontWeight: "bold",
