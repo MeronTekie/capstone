@@ -61,7 +61,6 @@ function PedometerTracker() {
 						titleStyle={{ fontSize: 25, color: "black", fontWeight: "bold" }}
 					/>
 				</View>
-
 				<View style={{ marginTop: 80 }}>
 					<Text style={styles.indicators}>
 						Distance Covered: {ditanceCovered}

@@ -1,38 +1,38 @@
 import * as React from "react";
-import { View, Text, StyleSheet ,FlatList,ScrollView} from "react-native";
+import { View, Text, StyleSheet ,FlatList,ScrollView,Image} from "react-native";
 import HealthInfo from "../assets/Data";
 export default function InfoCenterScreen({ navigation }) {
 	return (
-		<View style={styles.homeContainer}>
+		<ScrollView style={styles.homeContainer}>
       {HealthInfo.map((item,index) => (
-        < View style={styles.info}>
+        < ScrollView style={styles.info}>
           <Text style={styles.content} key={index}>{item.title}</Text>
-        </View>
+            <Image 
+            style={{height:370}}
+            key={item.id} 
+            source={{url:item.image}}></Image>
+        </ScrollView>
       ))}
-
-		</View>
+		</ScrollView>
 	);
 }
 const styles = StyleSheet.create({
 	homeContainer: {
 		flex: 1,
-    backgroundColor:'rgba(13,123,23,0.2)',
+    backgroundColor:'rgba(13,12,23,0.2)',
 	},
   info:{
     flex:1,
-    backgroundColor:'rgba(128, 0, 128,0.9)',
-    // marginTop:1,
-    // marginBottom:5,
+    backgroundColor:'rgba(128,12, 128,0.9)',
     alignContent:'center',
     margin:12,
-    borderRadius:45
+    borderRadius:20
   },
   content:{
-    marginTop:15,
+    marginTop:5,
     marginBottom:15,
     fontSize:25,
     textAlign:'center',
-   
     color:'white'
   }
 });
