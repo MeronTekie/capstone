@@ -77,7 +77,7 @@ function PedometerTracker() {
 				</View>
 				<View style={{marginTop: 10 }}>
 					<Text style={styles.indicators}>
-						Distance Covered: {ditanceCovered}
+						Calories: {ditanceCovered}
 					</Text>
 					<Progress.Bar
 						progress={distanceProgress()}
@@ -90,7 +90,7 @@ function PedometerTracker() {
 				</View>
 				<View style={{  marginTop: 10 }}>
 					<Text style={styles.indicators}>
-						Distance Covered: {ditanceCovered}
+						Total Steps: {ditanceCovered}
 					</Text>
 					<Progress.Bar
 						progress={distanceProgress()}

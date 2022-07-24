@@ -25,7 +25,7 @@ export default function MainContainer() {
 		<Tab.Navigator
 			screenOptions={{
 				headerStyle: {
-					backgroundColor: "purple",
+					backgroundColor: "white",
 					opacity: 0.9,
 					
 				},

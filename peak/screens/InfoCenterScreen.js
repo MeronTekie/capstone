@@ -3,34 +3,36 @@ import { View, Text, StyleSheet ,FlatList,ScrollView} from "react-native";
 import HealthInfo from "../assets/Data";
 export default function InfoCenterScreen({ navigation }) {
 	return (
-		<View style={{flex:1}}>
+		<View style={styles.homeContainer}>
       {HealthInfo.map((item,index) => (
-        <FlatList style={styles.list} onPress={()=>alert("Hello")}>
-            <Text style={styles.header} key={index}>{item.title}</Text>
-        </FlatList>
+        < View style={styles.info}>
+          <Text style={styles.content} key={index}>{item.title}</Text>
+        </View>
       ))}
+
 		</View>
 	);
 }
 const styles = StyleSheet.create({
 	homeContainer: {
 		flex: 1,
-		alignItems: "center",
-		justifyContent: "center",
+    backgroundColor:'rgba(13,123,23,0.2)',
 	},
-	homeBody: {
-		fontSize: 25,
-		fontWeight: "bold",
-	},
-	list: {
-		fontSize: 80,
-		color: "green",
-		borderColor: "orange",
-		borderRadius: 20,
-		borderWidth: 70,
-	},
-  header:{
-    color:'black',
-    fontSize:50
+  info:{
+    flex:1,
+    backgroundColor:'rgba(128, 0, 128,0.9)',
+    // marginTop:1,
+    // marginBottom:5,
+    alignContent:'center',
+    margin:12,
+    borderRadius:45
+  },
+  content:{
+    marginTop:15,
+    marginBottom:15,
+    fontSize:25,
+    textAlign:'center',
+   
+    color:'white'
   }
 });
