@@ -5,58 +5,66 @@ import { Pedometer } from "expo-sensors";
 import CircularProgress from "react-native-circular-progress-indicator";
 import * as Progress from "react-native-progress";
 import { decay } from "react-native-reanimated";
+import { v4 } from "uuid";
 
 function PedometerTracker() {
 	const [availability, setAvailability] = useState("");
 	const [stepsNumber, setStepsNumber] = useState(0);
 	const [pastStepCount, setPastStepCount] = useState(0);
+	const [stepsStored, setStepsStored] = useState([]);
 
+
+	const stepsTrack = () => {
+		if (
+			end.getHours() === 23 &&
+			end.getMinutes() === 59 &&
+			end.getSeconds() === 59 &&
+			end.getMilliseconds() === 59
+		) {
+			setStepsNumber(...setStepsStored, {
+				id: stepsStored.length,
+				steps: pastStepCount,
+			});
+			setPastStepCount(0);
+		}
+	};
 	const end = new Date();
-  const start = new Date();
+	const start = new Date();
 	start.setDate(end.getDate() - 1);
-  
+
 	const distanceGoal = 400;
 	var distance = stepsNumber;
 	var ditanceCovered = distance.toFixed(1) / distanceGoal;
 
-	const distanceProgress = ditanceCovered/1000
-	// 	if (ditanceCovered < 1) {
-	// 		return ditanceCovered;
-	// 	} else {
-	// 		return 1;
-	// 	}
-	// };
+	const distanceProgress = ditanceCovered / 1000;
 	useEffect(() => {
 		subscribe();
 	}, []);
-  
 	subscribe = () => {
-
 		const end = new Date();
-    const start = new Date();
-    start.setDate(end.getDate() - 1);
-    Pedometer.getStepCountAsync(start, end).then(
-      result => {
-        setPastStepCount( result.steps );
-      },
-      error => {
-        setPastStepCount( 'Could not get stepCount: ' + error);
-      }
-    );
-  };
-
-		const subscription = Pedometer.watchStepCount((result) => {
-			setStepsNumber(result.steps);
-		});
-		Pedometer.isAvailableAsync().then(
+		const start = new Date();
+		start.setDate(end.getDate() - 1);
+		Pedometer.getStepCountAsync(start, end).then(
 			(result) => {
-				setAvailability(String(result));
+				setPastStepCount(result.steps);
 			},
 			(error) => {
-				setAvailability(error);
+				setPastStepCount("Could not get stepCount: " + error);
 			}
 		);
-  
+	};
+	const subscription = Pedometer.watchStepCount((result) => {
+		setStepsNumber(result.steps);
+	});
+	Pedometer.isAvailableAsync().then(
+		(result) => {
+			setAvailability(String(result));
+		},
+		(error) => {
+			setAvailability(error);
+		}
+	);
+
 	return (
 		<View style={styles.container}>
 			<ImageBackground
@@ -91,10 +99,8 @@ function PedometerTracker() {
 						indeterminateAnimationDuration={2000}
 					/>
 				</View>
-				<View style={{marginTop: 10 }}>
-					<Text style={styles.indicators}>
-						Calories: {ditanceCovered}
-					</Text>
+				<View style={{ marginTop: 10 }}>
+					<Text style={styles.indicators}>Calories: {ditanceCovered}</Text>
 					<Progress.Bar
 						progress={distanceProgress}
 						height={20}
@@ -104,10 +110,8 @@ function PedometerTracker() {
 						indeterminateAnimationDuration={2000}
 					/>
 				</View>
-				<View style={{  marginTop: 10 }}>
-					<Text style={styles.indicators}>
-						Total Steps: {pastStepCount}
-					</Text>
+				<View style={{ marginTop: 10 }}>
+					<Text style={styles.indicators}>Total Steps: {pastStepCount}</Text>
 					<Progress.Bar
 						progress={distanceProgress}
 						height={20}
@@ -149,18 +153,18 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		marginLeft: 10,
 	},
-	indicators:{
-		fontSize: 25, 
+	indicators: {
+		fontSize: 25,
 		color: "white",
 		marginTop: 5,
-		marginBottom:5,
-		borderBottomEndRadius:25,
-		alignContent:'flex-start',
-		borderRadius:45,
-		marginRight:80,
-		marginLeft:10,
-		fontWeight:'bold'
-	}
+		marginBottom: 5,
+		borderBottomEndRadius: 25,
+		alignContent: "flex-start",
+		borderRadius: 45,
+		marginRight: 80,
+		marginLeft: 10,
+		fontWeight: "bold",
+	},
 });
 
 export default PedometerTracker;
