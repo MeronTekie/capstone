@@ -10,23 +10,22 @@ function PedometerTracker() {
 	const [availability, setAvailability] = useState("");
 	const [stepsNumber, setStepsNumber] = useState(0);
 	const [progressGoal, setProgressGoal] = useState(0);
-
+  
 	const distanceGoal = 400;
 	var distance = stepsNumber;
 	var ditanceCovered = distance.toFixed(1) / distanceGoal;
 
-	const distanceProgress = (ditanceCovered) => {
-		if (ditanceCovered < 1) {
-			return ditanceCovered;
-		} else {
-			return 1;
-		}
-	};
-
+	const distanceProgress = ditanceCovered/1000
+	// 	if (ditanceCovered < 1) {
+	// 		return ditanceCovered;
+	// 	} else {
+	// 		return 1;
+	// 	}
+	// };
 	useEffect(() => {
 		subscribe();
 	}, []);
-
+  
 	subscribe = () => {
 		const subscription = Pedometer.watchStepCount((result) => {
 			setStepsNumber(result.steps);
@@ -40,6 +39,7 @@ function PedometerTracker() {
 			}
 		);
 	};
+  
 	return (
 		<View style={styles.container}>
 			<ImageBackground
@@ -66,7 +66,7 @@ function PedometerTracker() {
 						Distance Covered: {ditanceCovered}
 					</Text>
 					<Progress.Bar
-						progress={distanceProgress()}
+						progress={distanceProgress}
 						height={20}
 						width={350}
 						borderColor={"yellow"}
@@ -79,7 +79,7 @@ function PedometerTracker() {
 						Calories: {ditanceCovered}
 					</Text>
 					<Progress.Bar
-						progress={distanceProgress()}
+						progress={distanceProgress}
 						height={20}
 						width={350}
 						color={"green"}
@@ -92,7 +92,7 @@ function PedometerTracker() {
 						Total Steps: {ditanceCovered}
 					</Text>
 					<Progress.Bar
-						progress={distanceProgress()}
+						progress={distanceProgress}
 						height={20}
 						width={350}
 						borderColor={"yellow"}
