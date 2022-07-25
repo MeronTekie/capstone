@@ -9,7 +9,11 @@ import { decay } from "react-native-reanimated";
 function PedometerTracker() {
 	const [availability, setAvailability] = useState("");
 	const [stepsNumber, setStepsNumber] = useState(0);
-	const [progressGoal, setProgressGoal] = useState(0);
+	const [pastStepCount, setPastStepCount] = useState(0);
+
+	const end = new Date();
+  const start = new Date();
+	start.setDate(end.getDate() - 1);
   
 	const distanceGoal = 400;
 	var distance = stepsNumber;
@@ -27,6 +31,20 @@ function PedometerTracker() {
 	}, []);
   
 	subscribe = () => {
+
+		const end = new Date();
+    const start = new Date();
+    start.setDate(end.getDate() - 1);
+    Pedometer.getStepCountAsync(start, end).then(
+      result => {
+        setPastStepCount( result.steps );
+      },
+      error => {
+        setPastStepCount( 'Could not get stepCount: ' + error);
+      }
+    );
+  };
+
 		const subscription = Pedometer.watchStepCount((result) => {
 			setStepsNumber(result.steps);
 		});
@@ -38,7 +56,6 @@ function PedometerTracker() {
 				setAvailability(error);
 			}
 		);
-	};
   
 	return (
 		<View style={styles.container}>
@@ -89,7 +106,7 @@ function PedometerTracker() {
 				</View>
 				<View style={{  marginTop: 10 }}>
 					<Text style={styles.indicators}>
-						Total Steps: {ditanceCovered}
+						Total Steps: {pastStepCount}
 					</Text>
 					<Progress.Bar
 						progress={distanceProgress}
