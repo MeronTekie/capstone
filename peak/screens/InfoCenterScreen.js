@@ -5,9 +5,9 @@ export default function InfoCenterScreen({ navigation }) {
 	return (
 		<ScrollView style={styles.homeContainer}>
       {HealthInfo.map((item,index) => (
-        < ScrollView style={styles.info}>
-          <Text style={styles.content} key={item.id}>{item.title}</Text>
-            <Image 
+        < ScrollView style={styles.info} key={item.id}>
+          <Text style={styles.content} >{item.title}</Text>
+            <Image
             style={{height:370}}
             source={{url:item.image}}></Image>
         </ScrollView>

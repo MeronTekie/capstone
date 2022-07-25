@@ -49,7 +49,7 @@ function PedometerTracker() {
 				setPastStepCount(result.steps);
 			},
 			(error) => {
-				setPastStepCount("Could not get stepCount: " + error);
+				setPastStepCount('Motion Sensor not working');
 			}
 		);
 	};
