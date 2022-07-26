@@ -2,13 +2,17 @@ import React from "react";
 import {  StyleSheet, View,SafeAreaView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import MainContainer from "./navigation/MainContainer";
+import {createStackNavigator} from '@react-navigation/stack'
+
 
 
 
 function App() {
 	return (
 		<NavigationContainer>
-			<MainContainer/>
+			<Stack.Navigator>
+		    <MainContainer/>
+			</Stack.Navigator>
 		</NavigationContainer>	
 	);
 }
