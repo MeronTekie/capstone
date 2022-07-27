@@ -12,31 +12,22 @@ function PedometerTracker() {
 	const [stepsNumber, setStepsNumber] = useState(0);
 	const [pastStepCount, setPastStepCount] = useState(0);
 	const [stepsStored, setStepsStored] = useState([]);
+  //Distance Goals and covere
+  let goalDistance = 0.5;
+	let distanceCovered = (stepsNumber/250).toFixed(1);
+	let percentageDistanceGoal = distanceCovered/goalDistance;
+ // Steps Goal 
+	let goalSteps = 10000;
+	let totalSteps = (stepsNumber/goalSteps).toFixed(0);
+	let percentageStepsGoal = totalSteps/goalSteps;
+  //Calorie Goals
+	let goalClaories = 10000;
+	let totalCaloriesBurned = (stepsNumber * 0.04).toFixed(0);
+	let percentageCalorieGoal = totalCaloriesBurned/goalClaories;
 
-
-	const stepsTrack = () => {
-		if (
-			end.getHours() === 23 &&
-			end.getMinutes() === 59 &&
-			end.getSeconds() === 59 &&
-			end.getMilliseconds() === 59
-		) {
-			setStepsNumber(...setStepsStored, {
-				id: stepsStored.length,
-				steps: pastStepCount,
-			});
-			setPastStepCount(0);
-		}
-	};
 	const end = new Date();
 	const start = new Date();
 	start.setDate(end.getDate() - 1);
-
-	const distanceGoal = 400;
-	var distance = stepsNumber;
-	var ditanceCovered = distance.toFixed(1) / distanceGoal;
-
-	const distanceProgress = ditanceCovered / 1000;
 	useEffect(() => {
 		subscribe();
 	}, []);
@@ -72,7 +63,7 @@ function PedometerTracker() {
 				resizeMode="stretch"
 				source={require("../assets/hiking.jpeg")}
 			>
-				<View style={{ alignItems: "center", marginTop: 35 }}>
+				<View style={{ alignItems: "center", marginTop: 25 }}>
 					<CircularProgress
 						value={stepsNumber}
 						maxValue={300}
@@ -84,14 +75,15 @@ function PedometerTracker() {
 						activeStrokeWidth={30}
 						title={"Steps"}
 						titleStyle={{ fontSize: 25, color: "black", fontWeight: "bold" }}
+						
 					/>
 				</View>
-				<View style={{ marginTop: 80 }}>
+				<View style={{ marginTop: 180 }}>
 					<Text style={styles.indicators}>
-						Distance Covered: {ditanceCovered}
+						Distance Covered: {distanceCovered} miles
 					</Text>
 					<Progress.Bar
-						progress={distanceProgress}
+						progress={percentageDistanceGoal}
 						height={20}
 						width={350}
 						borderColor={"yellow"}
@@ -100,9 +92,9 @@ function PedometerTracker() {
 					/>
 				</View>
 				<View style={{ marginTop: 10 }}>
-					<Text style={styles.indicators}>Calories: {ditanceCovered}</Text>
+					<Text style={styles.indicators}>Calories: {totalCaloriesBurned}</Text>
 					<Progress.Bar
-						progress={distanceProgress}
+						progress={percentageCalorieGoal}
 						height={20}
 						width={350}
 						color={"green"}
@@ -113,7 +105,7 @@ function PedometerTracker() {
 				<View style={{ marginTop: 10 }}>
 					<Text style={styles.indicators}>Total Steps: {pastStepCount}</Text>
 					<Progress.Bar
-						progress={distanceProgress}
+						progress={percentageStepsGoal}
 						height={20}
 						width={350}
 						borderColor={"yellow"}

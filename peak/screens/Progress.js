@@ -33,7 +33,7 @@ export default function Progress({ navigation }) {
 							backgroundGradientFrom: "white",
 							backgroundGradientTo: "white",
 							decimalPlaces: 2,
-							color: (opacity = 0.4) => `rgba(25, 18, 189, ${opacity})`,
+							color: (opacity = 1) => `rgba(25, 18, 189, ${opacity})`,
 							style: {
 								borderRadius: 26,
 							},
