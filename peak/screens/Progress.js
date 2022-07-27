@@ -11,15 +11,14 @@ import {
 } from "react-native-chart-kit";
 export default function Progress({ navigation }) {
 	return (
-		<ScrollView>
+		<ScrollView  >
 			<View style={styles.container}>
 				<View>
-					{/*It is an Example of Progress Chart*/}
 					<Text
 						style={{
 							textAlign: "center",
 							fontSize: 48,
-							padding: 36,
+							padding: 6,
 							marginTop: 86,
 						}}
 					>
