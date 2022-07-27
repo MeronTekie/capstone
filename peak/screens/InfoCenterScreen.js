@@ -8,8 +8,9 @@ export default function InfoCenterScreen({ navigation }) {
         < ScrollView style={styles.info} key={item.id}>
           <Text style={styles.content} >{item.title}</Text>
             <Image
-            style={{height:370}}
-            source={{url:item.image}}></Image>
+              style={{height:370}}
+              source={{url:item.image}}>
+            </Image>
         </ScrollView>
       ))}
 		</ScrollView>

@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white'
+    backgroundColor: '#E4DBEC'
   },
   slide2: {
     flex: 1,
@@ -24,10 +24,14 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'black',
-    fontSize: 20,
-    margin:20,
-    backgroundColor:'white',
-  
+    fontSize: 24,
+    margin:10,
+    
+    padding:70,
+    // fontStyle:'italic',
+    fontFamily:'Snell Roundhand',
+    borderColor:'black',
+    fontWeight:'bold'
     
   }
 })
@@ -36,26 +40,8 @@ export default function Home({ navigation }) {
 	return (
       <Swiper style={styles.wrapper} showsButtons={true}>
         <View style={styles.slide1}>
-          <Image style={{height:80,width:80,borderRadius:40}} source={require('../assets/pedometer-cover.jpeg')} />
-          <Text style={styles.text}>Hello Swiper sfgsdbsdbsbsdsbsgdgdsgsdgsddddbsbsdbsdbsbsbsbsdbsdbdsbdsbsdbsdbsbsbsdbdvsavsdbsdbsdbsdbsdbsdb</Text>
-        </View>
-        <View style={styles.slide2}>
-          <Text style={styles.text}>Beautiful</Text>
-        </View>
-        <View style={styles.slide3}>
-          <Text style={styles.text}>And simple</Text>
-        </View>
-        <View style={styles.slide3}>
-          <Text style={styles.text}>And simple</Text>
-        </View>
-        <View style={styles.slide3}>
-          <Text style={styles.text}>And simple</Text>
-        </View>
-        <View style={styles.slide3}>
-          <Text style={styles.text}>And simple</Text>
-        </View>
-        <View style={styles.slide3}>
-          <Text style={styles.text}>And simple</Text>
+          <Image style={{height:120,width:120,borderRadius:60}} source={require('../assets/logo_size_invert.jpg')} />
+          <Text style={styles.text}> A mobile application friendly with both ios and android systems,built to calculate the calories burned and distance covered within 24 hour of frame time.</Text>
         </View>
       </Swiper>
 	);

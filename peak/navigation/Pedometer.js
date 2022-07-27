@@ -15,14 +15,14 @@ function PedometerTracker() {
   //Distance Goals and covere
   let goalDistance = 0.3;
 	let distanceCovered = (pastStepCount/2250).toFixed(1);
-	let percentageDistanceGoal = distanceCovered/goalDistance;
-	if(percentageDistanceGoal>=1){
+	let percentageDistanceGoal = parseInt(distanceCovered/goalDistance);
+	if(percentageDistanceGoal >= 1){
 		percentageDistanceGoal =1;
 	}
  // Steps Goal 
 	let goalSteps = 350;
 	let totalSteps = (pastStepCount/goalSteps).toFixed(1);
-	if(totalSteps>=1){
+	if(totalSteps >= 1){
 		totalSteps =1;
 	}
 	// let percentageStepsGoal = totalSteps/goalSteps;
@@ -64,7 +64,6 @@ function PedometerTracker() {
 			setAvailability(error);
 		}
 	);
-
 	return (
 		<View style={styles.container}>
 			<ImageBackground
