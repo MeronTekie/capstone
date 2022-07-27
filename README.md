@@ -6,7 +6,7 @@
 ## 🖥️ Technologies Used
 
 
-<img src="https://github.com/devicons/devicon/tree/v2.15.1/icons/xcode" width="35" height="35"/> <br>
+<img src="https://github.com/devicons/devicon/blob/v2.15.1/icons/xcode/xcode-plain.svg" width="35" height="35"/> <br>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" width="35" height="35"/> <br>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" width="35" height="35"/> <br>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" width="35" height="35"/><br>
@@ -36,9 +36,6 @@ The Peak Performance app is built using react-native library/framework.It can ru
 ## Important N.B
 
 - Since the expo sensors doe not work on PC's and Laptops you will only be able to see the steps count ,burned calories and the distance covered in your mobile devices.But the other features of the app works well in any platform.
-
-
-
 
 ## Known Bugs 🐛
 
