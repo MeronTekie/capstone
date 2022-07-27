@@ -20,56 +20,25 @@ The Peak Performance app is built using react-native library/framework.It can ru
 
 ## ⚙️ Setup/Installation Requirements
 
-- First, make sure you have MySql Workbench downloaded and properly installed. You will also need a text editor(Vscode Highly recommended) and a command-line
+- Expo app should be installed to your devices
+- If you want to run your your app in your PC you will need Simulator in Windows and   Emulator in MacOS.
+- Navigate to your preference directory in your terminal
+- Type `git clone https://github.com/MeronTekie/capstone.git` in your Terminal
+- Type `cd capstone/peak` 
+- Type `npm install` to make sure all dependencies needed for the project are installed.
+- Type `npm start` to run the project.
+- To  run the app in your mobile,Scan the QR code generated.
+- To run the app in Android press `a`
+- To run the app in iOS emulator press `i`
+- To run the app in web `w`
 
-- In your command line navigate to your desktop directory and clone this project <https://github.com/MeronTekie/local-business-api.git>
-- In the root directory, confirm there is a .gitignore file
 
-- Make sure to ignore sensitive data/file so they do not get pushed to remote repository
-- Add:
+## Important N.B
 
-  ```
-  */obj/
-  */bin/
-  */appsettings.json
-  ```
+- Since the expo sensors doe not work on PC's and Laptops you will only be able to see the steps count ,burned calories and the distance covered in your mobile devices.But the other features of the app works well in any platform.
 
-- Create an appsetting.json file at the root directory
-- Open the appsetting.json file and enter:
 
-- To create the database please do as follows:
 
-  - First create a file at the root of the project directory called "appsettings.json" and add the following code to connect your project to the local database,
-
-  ```
-      {
-        "ConnectionStrings": {
-          "DefaultConnection": "Server=localhost;Port=3306;database=[your_database];uid=[Your ID];pwd=[Your Password];"
-        }
-      }
-  ```
-
-- Make sure the following packages are restored or type the following in the Project directory.
-  - `dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0`
-  - `dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2`
-  - `dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0`
-  - `dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore -v 5.0.0`
-- Then do the following accordingly in your terminal to update and connect your project to your local database :
-  - `dotnet restore`
-  - `dotnet build`
-  - `dotnet ef migrations add Initial`
-- Once we have verified that the migration looks correct and made any necessary changes, we'll run the following commands:
-
-  - `dotnet ef database update`
-  - `dotnet run`
-
-- The above code will create a new database in your local host with tables designed to store information related to the project.
-
-- To interact with the local host website navigate to the project directory and run `dotnet run`or `dotnet watch run`
-- Click on <http://localhost:5001/> and you will be directed to the Swagger UI which is very user friendly and easy to walk through.
-- The image below is the expected page when you run it on your local browser.
-
-<img src ="LocalBusinessApi/img/swagger.png" width="100%" height="400">
 
 ## Known Bugs 🐛
 
