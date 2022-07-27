@@ -11,19 +11,28 @@ function PedometerTracker() {
 	const [availability, setAvailability] = useState("");
 	const [stepsNumber, setStepsNumber] = useState(0);
 	const [pastStepCount, setPastStepCount] = useState(0);
-	const [stepsStored, setStepsStored] = useState([]);
+	// const [stepsStored, setStepsStored] = useState([]);
   //Distance Goals and covere
-  let goalDistance = 0.5;
-	let distanceCovered = (stepsNumber/250).toFixed(1);
+  let goalDistance = 0.3;
+	let distanceCovered = (pastStepCount/2250).toFixed(1);
 	let percentageDistanceGoal = distanceCovered/goalDistance;
+	if(percentageDistanceGoal>=1){
+		percentageDistanceGoal =1;
+	}
  // Steps Goal 
-	let goalSteps = 10000;
-	let totalSteps = (stepsNumber/goalSteps).toFixed(0);
-	let percentageStepsGoal = totalSteps/goalSteps;
+	let goalSteps = 350;
+	let totalSteps = (pastStepCount/goalSteps).toFixed(1);
+	if(totalSteps>=1){
+		totalSteps =1;
+	}
+	// let percentageStepsGoal = totalSteps/goalSteps;
   //Calorie Goals
-	let goalClaories = 10000;
-	let totalCaloriesBurned = (stepsNumber * 0.04).toFixed(0);
+	let goalClaories = 10;
+	let totalCaloriesBurned = (pastStepCount * 0.04).toFixed(0);
 	let percentageCalorieGoal = totalCaloriesBurned/goalClaories;
+	if(percentageCalorieGoal>=1){
+		percentageCalorieGoal =1;
+	}
 
 	const end = new Date();
 	const start = new Date();
@@ -66,7 +75,7 @@ function PedometerTracker() {
 				<View style={{ alignItems: "center", marginTop: 25 }}>
 					<CircularProgress
 						value={stepsNumber}
-						maxValue={300}
+						maxValue={goalSteps}
 						radius={150}
 						inActiveStrokeColor={"black"}
 						activeStrokeColor={"yellow"}
@@ -75,7 +84,6 @@ function PedometerTracker() {
 						activeStrokeWidth={30}
 						title={"Steps"}
 						titleStyle={{ fontSize: 25, color: "black", fontWeight: "bold" }}
-						
 					/>
 				</View>
 				<View style={{ marginTop: 180 }}>
@@ -105,7 +113,7 @@ function PedometerTracker() {
 				<View style={{ marginTop: 10 }}>
 					<Text style={styles.indicators}>Total Steps: {pastStepCount}</Text>
 					<Progress.Bar
-						progress={percentageStepsGoal}
+						progress={totalSteps}
 						height={20}
 						width={350}
 						borderColor={"yellow"}
