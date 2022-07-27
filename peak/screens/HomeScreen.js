@@ -57,9 +57,6 @@ export default function Home({ navigation }) {
         <View style={styles.slide3}>
           <Text style={styles.text}>And simple</Text>
         </View>
-        <View style={styles.slide3}>
-          <Text style={styles.text}>And simple</Text>
-        </View>
       </Swiper>
 	);
 }
