@@ -1,11 +1,11 @@
 <h1 font-size ="35px">PEAk PERFORMANCE MOBILE APP</h1>
 # By Meron G. Tekie,
 
-### A mobile application friendly with both ios and android systems tha is built to calculate the calories burned in and distance covered with in 24 hour of frame time.
+### A mobile application friendly with both ios and android systems,built to calculate the calories burned and distance covered within 24 hour of frame time.
 
 ## 🖥️ Technologies Used
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="35" height="35"/> <br>
+
 <img src="https://github.com/devicons/devicon/tree/v2.15.1/icons/xcode" width="35" height="35"/> <br>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" width="35" height="35"/> <br>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" width="35" height="35"/> <br>
