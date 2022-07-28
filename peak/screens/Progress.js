@@ -25,8 +25,9 @@ export default function Progress({ navigation }) {
 						Progress 
 					</Text>
 					<ProgressChart
-						data={[0.2, 0.7, 0.5]}
-						width={Dimensions.get("window").width - 16}
+						data={[0.39, 0.75, 0.5]}
+						// width={Dimensions.get("window").width - 16}
+						width={400}
 						height={220}
 						chartConfig={{
 							backgroundColor: "white",

@@ -15,19 +15,19 @@ function PedometerTracker() {
   //Distance Goals and covere
   let goalDistance = 0.3;
 	let distanceCovered = (pastStepCount/2250).toFixed(1);
-	let percentageDistanceGoal = parseInt(distanceCovered/goalDistance);
-	if(percentageDistanceGoal >= 1){
+	let percentageDistanceGoal = distanceCovered/goalDistance;
+	if(percentageDistanceGoal>=1){
 		percentageDistanceGoal =1;
 	}
  // Steps Goal 
-	let goalSteps = 350;
+	let goalSteps = 3500;
 	let totalSteps = (pastStepCount/goalSteps).toFixed(1);
-	if(totalSteps >= 1){
+	if(totalSteps>=1){
 		totalSteps =1;
 	}
 	// let percentageStepsGoal = totalSteps/goalSteps;
   //Calorie Goals
-	let goalClaories = 10;
+	let goalClaories = 1000;
 	let totalCaloriesBurned = (pastStepCount * 0.04).toFixed(0);
 	let percentageCalorieGoal = totalCaloriesBurned/goalClaories;
 	if(percentageCalorieGoal>=1){
@@ -49,7 +49,7 @@ function PedometerTracker() {
 				setPastStepCount(result.steps);
 			},
 			(error) => {
-				setPastStepCount('Motion Sensor not working');
+				setPastStepCount(0);
 			}
 		);
 	};
@@ -64,6 +64,7 @@ function PedometerTracker() {
 			setAvailability(error);
 		}
 	);
+
 	return (
 		<View style={styles.container}>
 			<ImageBackground
@@ -85,7 +86,7 @@ function PedometerTracker() {
 						titleStyle={{ fontSize: 25, color: "black", fontWeight: "bold" }}
 					/>
 				</View>
-				<View style={{ marginTop: 180 }}>
+				<View style={{marginTop: 80}}>
 					<Text style={styles.indicators}>
 						Distance Covered: {distanceCovered} miles
 					</Text>
@@ -98,7 +99,7 @@ function PedometerTracker() {
 						indeterminateAnimationDuration={2000}
 					/>
 				</View>
-				<View style={{ marginTop: 10 }}>
+				<View style={{marginTop:10}}>
 					<Text style={styles.indicators}>Calories: {totalCaloriesBurned}</Text>
 					<Progress.Bar
 						progress={percentageCalorieGoal}
@@ -109,7 +110,7 @@ function PedometerTracker() {
 						indeterminateAnimationDuration={2000}
 					/>
 				</View>
-				<View style={{ marginTop: 10 }}>
+				<View style={{marginTop:10}}>
 					<Text style={styles.indicators}>Total Steps: {pastStepCount}</Text>
 					<Progress.Bar
 						progress={totalSteps}
