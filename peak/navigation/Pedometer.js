@@ -15,21 +15,21 @@ function PedometerTracker() {
   //Distance Goals and covere
   let goalDistance = 0.3;
 	let distanceCovered = (pastStepCount/2250).toFixed(1);
-	let percentageDistanceGoal = distanceCovered/goalDistance;
+	let percentageDistanceGoal = Number(distanceCovered/goalDistance);
 	if(percentageDistanceGoal>=1){
 		percentageDistanceGoal =1;
 	}
  // Steps Goal 
 	let goalSteps = 3500;
-	let totalSteps = (pastStepCount/goalSteps).toFixed(1);
-	if(totalSteps>=1){
+	let totalSteps = Number((pastStepCount/goalSteps).toFixed(1));
+	if(totalSteps >=1){
 		totalSteps =1;
 	}
 	// let percentageStepsGoal = totalSteps/goalSteps;
   //Calorie Goals
 	let goalClaories = 1000;
 	let totalCaloriesBurned = (pastStepCount * 0.04).toFixed(0);
-	let percentageCalorieGoal = totalCaloriesBurned/goalClaories;
+	let percentageCalorieGoal = Number(totalCaloriesBurned/goalClaories);
 	if(percentageCalorieGoal>=1){
 		percentageCalorieGoal =1;
 	}
@@ -88,7 +88,7 @@ function PedometerTracker() {
 				</View>
 				<View style={{marginTop: 80}}>
 					<Text style={styles.indicators}>
-						Distance Covered: {distanceCovered} miles
+						Distance : {distanceCovered} miles
 					</Text>
 					<Progress.Bar
 						progress={percentageDistanceGoal}
